@@ -19,7 +19,7 @@
 	RootModule = 'CSVValidator.psm1'
 	
 	# Version number of this module.
-	ModuleVersion = '1.0.0.2'
+	ModuleVersion = '1.0.0.3'
 	
 	# ID used to uniquely identify this module
 	GUID = 'bc429aed-587e-4897-a714-f9133f122490'

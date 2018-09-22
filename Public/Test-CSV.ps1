@@ -3,17 +3,20 @@
 	[CmdletBinding(SupportsShouldProcess = $false)]
 	param
 	(
-		[Parameter(Mandatory = $true)]
-		[ValidatePattern('.csv')]
-		[ValidateNotNullOrEmpty()]
+		[Parameter(Mandatory = $true,
+				   Position = 0)]
 		[ValidateScript({ test-path $_ })]
+		[ValidateNotNullOrEmpty()]
+		[ValidatePattern('.csv')]
 		[Alias('File', 'FilePath', 'csv', 'csvfile')]
 		[string]$Path,
-		[Parameter(Mandatory = $true)]
+		[Parameter(Mandatory = $true,
+				   Position = 1)]
 		[ValidateNotNullOrEmpty()]
 		[string[]]$Headers,
 		[switch]$DisallowHeadersWithoutRules
 	)
+	
 	#begin
 	$rules = @{ }
 	foreach ($item in $Headers)
@@ -51,8 +54,8 @@
 		}
 		else
 		{
-			$missingHeaders.add($item)
-			$rulesResults.missingHeaders.add($item)
+			$missingHeaders.add($item) | Out-Null
+			$rulesResults.missingHeaders.add($item) | Out-Null
 		}
 	}
 	
