@@ -1,13 +1,13 @@
-﻿function Test-CSV
+﻿function Test-CSVHeader
 {
 	[CmdletBinding(SupportsShouldProcess = $false)]
 	param
 	(
 		[Parameter(Mandatory = $true,
 				   Position = 0)]
-		[ValidateScript({ test-path $_ })]
-		[ValidateNotNullOrEmpty()]
 		[ValidatePattern('.csv')]
+		[ValidateNotNullOrEmpty()]
+		[ValidateScript({ test-path $_ })]
 		[Alias('File', 'FilePath', 'csv', 'csvfile')]
 		[string]$Path,
 		[Parameter(Mandatory = $true,
@@ -24,7 +24,14 @@
 		$rules.add($item, $item)
 	}
 	$csvData = Import-Csv $Path
-	$CSVHeader = $csvData[0] | Get-Member | where-object{ $_.MemberType -eq 'NoteProperty' }
+	try
+	{
+		$CSVHeader = $csvData[0] | Get-Member | where-object{ $_.MemberType -eq 'NoteProperty' }
+	}
+	catch
+	{
+		throw "There was no data in the CSV file $($Path).  The script is unable to validate headers on this file."
+	}
 	$headersNotInRules = [System.Collections.ArrayList]@()
 	$missingHeaders = [System.Collections.arraylist]@()
 	$rulesResults = [pscustomobject]@{
