@@ -1,4 +1,7 @@
-﻿function Test-CSVHeader
+﻿<#
+		.EXTERNALHELP ..\CSVValidator.psm1-help.xml
+#>
+function Test-CSVHeader
 {
 	[CmdletBinding(SupportsShouldProcess = $false)]
 	param

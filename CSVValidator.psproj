@@ -4,13 +4,16 @@
   <ProjectType>1</ProjectType>
   <Folders>
     <Folder>Public</Folder>
+    <Folder>en-US</Folder>
   </Folders>
   <Files>
     <File Build="2">CSVValidator.psd1</File>
     <File Build="0" ExportFunctions="True">CSVValidator.psm1</File>
     <File Build="1" Shared="False" ReferenceFunction="Invoke-Test-Module_ps1" ExportFunctions="False">Test-Module.ps1</File>
     <File Build="1">.gitignore</File>
-    <File Build="2" Shared="True" ReferenceFunction="Invoke-Test-CSV_ps1" ExportFunctions="True">Public\Test-CSV.ps1</File>
+    <File Build="2" Shared="True" ReferenceFunction="Invoke-Test-CSVHeader_ps1" ExportFunctions="True">Public\Test-CSVHeader.ps1</File>
+    <File Build="2">en-US\about_CSVValidator.Help.txt</File>
+    <File Build="2">CSVValidator.psm1-help.xml</File>
   </Files>
   <StartupScript>C:\Users\PaulDeArment\Documents\Repos\CSVValidator\Test-Module.ps1</StartupScript>
 </Project>

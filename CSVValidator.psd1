@@ -76,10 +76,10 @@
 	NestedModules = @()
 	
 	# Functions to export from this module
-	FunctionsToExport = @('Test-CSV') #For performance, list functions explicitly
+	FunctionsToExport = @('Test-CSVHeader') #For performance, list functions explicitly
 	
 	# Cmdlets to export from this module
-	CmdletsToExport = 'Test-CSV' 
+	CmdletsToExport = '' 
 	
 	# Variables to export from this module
 	VariablesToExport = '*'

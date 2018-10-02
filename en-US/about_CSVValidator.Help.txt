@@ -1,0 +1,22 @@
+﻿TOPIC 
+	CSVValidator is a module used to validate CSV files.
+	
+SHORT DESCRIPTION	
+	The module is able to validate CSV files and validate that headers are present, as well as eventually validate the actual data in the CSV file.
+	
+LONG DESCRIPTION
+	The module is able to validate CSV files and validate that headers are present, as well as eventually validate the actual data in the CSV file.
+	
+NOTE
+	This is an early version of the module
+	
+TROUBLESHOOTING NOTE
+	
+	
+	
+EXAMPLES
+	C:\PS> Test-CSVHeader -Path "C:\Test\Example.csv" -Headers @("Name","Data") -DisallowHeadersWithoutRules
+	C:\PS> Test-CSVHeader -Path "C:\Test\Example.csv" -Headers @("Name","Data")
+	
+KEYWORDS
+	CSV
