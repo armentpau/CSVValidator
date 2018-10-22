@@ -29,7 +29,9 @@ function Test-CSVHeader
 	$csvData = Import-Csv $Path
 	try
 	{
+		Write-Verbose "Attempting to import headers into variable CSVHeader"
 		$CSVHeader = $csvData[0] | Get-Member | where-object{ $_.MemberType -eq 'NoteProperty' }
+		Write-Verbose "Successfully imported headers into variable CSVHeader"
 	}
 	catch
 	{

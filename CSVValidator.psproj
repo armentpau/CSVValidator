@@ -14,6 +14,8 @@
     <File Build="2" Shared="True" ReferenceFunction="Invoke-Test-CSVHeader_ps1" ExportFunctions="True">Public\Test-CSVHeader.ps1</File>
     <File Build="2">en-US\about_CSVValidator.Help.txt</File>
     <File Build="2">CSVValidator.psm1-help.xml</File>
+    <File Build="2" Shared="True" ReferenceFunction="Invoke-New-CsvValidationRule_ps1" ExportFunctions="False">Public\New-CsvValidationRule.ps1</File>
+    <File Build="2" Shared="True" ReferenceFunction="Invoke-Test-CSVContent_ps1" ExportFunctions="False">Public\Test-CSVContent.ps1</File>
   </Files>
   <StartupScript>C:\Users\PaulDeArment\Documents\Repos\CSVValidator\Test-Module.ps1</StartupScript>
 </Project>
